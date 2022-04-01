@@ -1,155 +1,166 @@
-@media (max-width: 1300px) {
-	:root {
-		font-size: 14px;
+@media (max-width: 1106px) {			
+	.container {		
+		max-width: 60rem;		
 	}
-}
-@media (max-width: 1200px)  {
-	.item1 {		
-		margin-right: 6.25rem;		
-	}
-}
-@media (max-width: 1100px)  {
-	.header, .main {		
-		padding: 0 30px;	
-	}	
 }
 
-@media (max-width: 920px) {
+@media (max-width: 920px) {	
 	.main__wrapper {
-		flex-direction: column;
+		margin: 0 -15px;
 	}
 	.main__item {
-		width: 100%;
-		margin: 0 auto;
-	}
-	.main {
-		height: 1000px;
+		padding: 15px;
 	}
 }
 
 
-/*************MENU HEADER*****************/
-@media (min-width: 770px) {
-	.header__nav {
-		display: flex;
-	}
-	.header__menu {		
-		display: flex;		
-	}	
-	.header__item {
-		margin-right: 40px;		
-	}
-	
+
+
+@media (max-width: 767px) {		
+
+  /*****************MOBILE_MENU************************/	
 	.open_menu {
-		display: none;	
-	}	
-}
-
-/*****************MOBILE_MENU************************/
-
-@media (max-width: 769px) {	
+		display: flex;
+		align-items: center;  
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		width: 26px;
+		height: 26px;
+		cursor: pointer;
+		z-index: 1;			
+	}
 	
-	.header {	
+	.burger,
+	.burger:before,
+	.burger:after {
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: 2px;
+		background-color: #999;
+		-webkit-transition: all 1s ease 0s;
+		-moz-transition: all 1s ease 0s;
+		-o-transition: all 1s ease 0s;
+		transition: all 1s ease 0s;
+	}
+	.burger:before {
+	  content: '';
+	  top: -8px;
+	}
+	.burger:after {
+	  content: '';
+	  top: 8px;
+	}
+	
+	.open_menu.active > span {
+		width: 0;			
+	}
+	.open_menu.active > span::before {
+		top: 0;
+		transform: rotate(45deg);
+		width: 30px;	
+	}
+	.open_menu.active > span::after {
+		top: 0;
+		transform: rotate(-45deg);		
+		width: 30px;	
+	}
+	
+	body.lock {
+		overflow: hidden;
+	}
+	
+	.header__nav,.header__nav.active {		
 		position: fixed;
 		width: 100%;
-		top: 0;
-		left: 0;		
-	}
-
-	
-	.open_menu {
-		display: block;	
-	}
-	
-	.open_menu::after {			
-		content: "\2261";				
-	}
-
-	.open_menu.active::after {				
-		content: "x";
-	}	
-
-	.header__menu, .header__menu.active {			
-		position: fixed;		
-		left: 5%;
-		right: 5%;		
-		width: 90%;	
-		
-		font-size: 28px;	
-		text-align: center;		
-
+		height: 100%;				
+		left: 0;
+		background-color: #000;
 		-webkit-transition: all 2s ease 0s;
 		-moz-transition: all 2s ease 0s;
 		-o-transition: all 2s ease 0s;
-		transition: all 2s ease 0s;
+		transition: all 2s ease 0s;		
+	}
+	.header__nav {
+		top: -100%;	
+	}
+	
+	.header__nav.active {		
+		top: 4rem;
+		padding-bottom: 4rem;
+		overflow: auto;	
 	}	
 	
+	.header__menu,.header__menu.active {
+		display: block;		
+	}	
 	
-	.header__menu {
-		top: -500px;	
-	}
-	
-	.header__menu.active {							
-		top: 70px;		
-	}
-	
-	.header__menu > li, .header__menu.active > li {	
+	.header__item {
 		width: 100%;
 		background-color: #000;
-		margin: 10px 0;	
-		padding: 10px 0;	
-	}		
-	.header__menu > li > a, .header__menu.active > li > a {
-		color: var(--orange-btn);		
+		margin: 0;	
+		padding: 10px;
+		text-align: center;	
+	}
+	.header__link {		
+		font-size: 2rem;
+	}
+	.header__item:not(:last-child) {
+		margin-right: 0;
+	}
+	
+	.header__link:visited {	
+		color: var(--gray-menu);
+			
+	}
+	.header__link:hover {	
+		color: #bb0b0b;	
 		text-decoration: none;
 	}
 	
-	.header__menu > li > a:visited {	
-		color: var(--orange-btn);		
+	/*=============MAIN==========*/
+	.item1__logo-img {
+		width: 150px;
 	}
-	.header__menu > li > a:hover {	
-		color: #bb0b0b;			
+	.main__wrapper {
+		margin: 0 -15px;
 	}
-	
-	.main.deactive {
-		display: none;
+	.main__item {
+		padding: 15px;
 	}
-	body {			
-		background-color: gray;
+	.main__item > .logo_text > p {	
+		font-size: 1.8rem;
+	}
+	.main__item > .logo_message > p{	
+		font-size: 0.9rem;
+	}
+}
+
+
+@media (max-width: 600px) {	
+	.container {		
+		max-width: 40rem;		
 	}	
-
-	.main__caption{		
-		margin: 6rem 0 0 0;	
-	}
-	
-	
 }
 
-
-@media (max-width: 520px) {
-	
-	.main__img {
-		width: 125px;
+@media (max-width: 640px) {	
+   
+   /*=============MAIN==========*/
+	.main__wrapper {	
+		display: flex;
+		flex-direction: column;			
+		justify-content: space-around;
+		align-items: stretch;	
+	}
+	.main__item, .item2__body {
+		flex: 1 1 100%;
 	}
 	
-	
-	.header, .main {		
-		padding: 0;
-		margin: 0;		
-	}
-	
-	.item1, .item2 {
-		padding: 0;
-		margin: 0;
-		width: 100%;		
-		min-width: 300px;
-	}
-	
-	.logo_text > p {
-		font-size: 1.5rem !important;
+	.text_outer_form, .menu__form  .btn_submit  {
+		height: 30px;
 	}
 }
 
 
 
-/****************END_MENU***************/
