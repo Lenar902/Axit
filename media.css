@@ -77,10 +77,10 @@
 		height: 100%;				
 		left: 0;
 		background-color: #000;
-		-webkit-transition: all 2s ease 0s;
-		-moz-transition: all 2s ease 0s;
-		-o-transition: all 2s ease 0s;
-		transition: all 2s ease 0s;		
+		-webkit-transition: all 1s ease 0s;
+		-moz-transition: all 1s ease 0s;
+		-o-transition: all 1s ease 0s;
+		transition: all 1s ease 0s;		
 	}
 	.header__nav {
 		top: -100%;	
@@ -93,14 +93,17 @@
 	}	
 	
 	.header__menu,.header__menu.active {
-		display: block;		
+		display: block;	
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
 	}	
 	
 	.header__item {
 		width: 100%;
 		background-color: #000;
 		margin: 0;	
-		padding: 10px;
+		padding: 30px;
 		text-align: center;	
 	}
 	.header__link {		
@@ -115,7 +118,7 @@
 			
 	}
 	.header__link:hover {	
-		color: #bb0b0b;	
+		color: #fff;	
 		text-decoration: none;
 	}
 	
@@ -147,19 +150,46 @@
 @media (max-width: 640px) {	
    
    /*=============MAIN==========*/
+   .main {	
+		min-height: 800px;		
+	}
 	.main__wrapper {	
 		display: flex;
 		flex-direction: column;			
-		justify-content: space-around;
-		align-items: stretch;	
+		justify-content: center;
+		align-items: center;		
+		min-height: 800px;
 	}
 	.main__item, .item2__body {
-		flex: 1 1 100%;
+		flex: 1 1 100%;		
+	}	
+	.item1 {
+		max-height: 350px;
+		overflow: hidden;
+	}
+	.item2 {
+		align-self: stretch;
 	}
 	
-	.text_outer_form, .menu__form  .btn_submit  {
-		height: 30px;
+	.data {
+		font-size: 1.5rem;
 	}
+	.menu__form .text_form {	 
+		font-size: 1.5rem;		
+	}
+	.menu__form  .btn_submit {	
+		font-size: 1.5rem;
+		letter-spacing: 3px;
+	}
+}
+@media (max-width: 440px) {	
+   
+   /*=============MAIN==========*/
+   .item1 {
+		max-height: 440px;
+		overflow: hidden;
+	}
+   
 }
 
 
