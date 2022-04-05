@@ -9,7 +9,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&family=Raleway:wght@300;500&display=swap" rel="stylesheet">
+	  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700;900&family=Raleway:wght@300;500&display=swap" rel="stylesheet">
+	  <script src="https://kit.fontawesome.com/575e49a31e.js" crossorigin="anonymous"></script>
 	</head>
 	
 	<body>
@@ -56,8 +57,17 @@
 									euismod bibendum laoreet. Proin gravida dolor sit amet lacus
 									accumsan et viverra justo commodo.</p>
 								</div>
-								<div class="button_download">
+								<div id="open-modal" class="button_download">
 									<a href="#" class="download">Download</a>					
+								</div>
+								<div class="modal" id="modal">
+									<div class="modal-body">
+										<h3>Модальное окно</h3>
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+										euismod bibendum laoreet. Proin gravida dolor sit amet lacus
+										accumsan et viverra justo commodo.</p>
+										<div id="close-modal" class="close-modal"><span class="close-btn"></span></div>
+									</div>
 								</div>
 							</div>
 							
@@ -80,6 +90,29 @@
 					</main>				
 				</div>	
 			</div>
+			
+			
+			<section class="social-media inner-container">
+				<div class="container container_border-bottom">
+					<div class="social-media__body">
+						<div class="social-media__info">
+							<h3>Social Media</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+								Aenean euismod bibendum laoreet.</p>
+						</div>
+						<div class="social-media__icons">
+							<a class="social-link" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+							<a class="social-link" href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+							<a class="social-link" href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+							<a class="social-link" href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+							<a class="social-link" href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+							<a class="social-link" href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+							<a class="social-link" href="#"><i class="fa fa-rss" aria-hidden="true"></i></a>
+						</div>
+					</div>
+				</div>
+			</section>	
+			
 		</div>		
 		
 		
@@ -90,12 +123,27 @@
 			var button = document.getElementsByClassName("open_menu")[0];
 			var nav = document.getElementsByClassName("header__nav")[0];
 			var lock = document.getElementsByTagName("body")[0];
+			
+			var open = document.getElementById("open-modal");
+			var modal = document.getElementById("modal");
+			var close = document.getElementById("close-modal");
+			
 			button.addEventListener("click", function(){
 				button.classList.toggle("active");
 				menu.classList.toggle("active");
 				nav.classList.toggle("active");
 				lock.classList.toggle("lock")
 			}, false);
+			
+			open.addEventListener("click", function(event){
+				event.preventDefault();
+				modal.style.display = 'block';
+			});
+			
+			close.addEventListener("click", function(event){
+				event.preventDefault();
+				modal.style.display = 'none';
+			});
 		</script>		
 		
 	</body>

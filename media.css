@@ -5,6 +5,9 @@
 }
 
 @media (max-width: 920px) {	
+	:root {
+		font-size: 14px;
+	}
 	.main__wrapper {
 		margin: 0 -15px;
 	}
@@ -164,7 +167,7 @@
 		flex: 1 1 100%;		
 	}	
 	.item1 {
-		max-height: 350px;
+		max-height: 400px;
 		overflow: hidden;
 	}
 	.item2 {
@@ -179,7 +182,7 @@
 	}
 	.menu__form  .btn_submit {	
 		font-size: 1.5rem;
-		letter-spacing: 3px;
+		letter-spacing: 2px;
 	}
 }
 @media (max-width: 440px) {	
@@ -188,9 +191,66 @@
    .item1 {
 		max-height: 440px;
 		overflow: hidden;
+	}   
+	
+	/*=============MODAL==========*/
+	.modal-body > h3 {		
+		font-size: 1.5rem;		
 	}
-   
+	.modal-body > p {		
+		font-size: 1rem;		
+	}
+	.modal-body {		
+		right: 5%;
+		left: 5%;
+		padding: 4em 2em;		
+	}
 }
+
+
+
+
+/*=============Social Media AND Modal===========***/
+@media (max-width: 991px) {	
+	/*=============MODAL==========*/
+	.modal-body {		
+		top: 4em;
+		bottom: 3em;		
+		padding: 2em;		
+	}
+	.close-btn {
+		
+		right: 0;
+		top: 10px;
+		padding: 15px 15px 0 15px;	
+	}
+	
+	/*=============Social==========*/
+	.social-media__body { 
+		justify-content: space-around;
+	}
+	.social-media__icons {		
+		flex-wrap: wrap;
+		justify-content: center;		
+		font-size: 2.5rem;
+		flex: 0 1 60%;
+	}
+	
+	.social-media__icons>.social-link {	
+		margin: 1rem 1.2rem;
+		flex: 0 1 15%;
+	}
+}
+@media (max-width: 767px) {	
+	.social-media__body {
+		flex-direction: column;
+		justify-content: center;		
+	}
+	.social-media__icons {		
+		margin: 1rem 0 0 0;
+	}
+}
+
 
 
 
