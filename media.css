@@ -262,7 +262,7 @@
    
    /*=============MAIN==========*/
    .item1 {
-		max-height: 460px;
+		max-height: 480px;
 		overflow: hidden;
 	}   
 	
@@ -289,9 +289,23 @@
 	.column-feature3 {
 		padding: 70px 0 50px 0;
 	}
+	.menu__form .text_form {	 
+		font-size: 1.2rem;		
+	}
+	.menu__form  .btn_submit {	
+		font-size: 1.2rem;		
+	}
+	.text_outer_form, .menu__form  .btn_submit {
+		height: 30px;
+	}
 }
 
-
+@media (max-width: 340px) {	
+	   /*=============MAIN==========*/
+   .item1 {
+		max-height: 520px;		
+	}   
+}
 
 
 
