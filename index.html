@@ -118,47 +118,56 @@
 				<div class="container">
 					<div class="features__row">
 						<div class="features__column column-feature1">
-							<div class="column-feature1__tab active">tab 1</div>
-							<div class="column-feature1__tab">tab 2</div>
-							<div class="column-feature1__tab">tab 3</div>
+							
+								<input id="radio-1" type="radio" name="radio" value="1" checked>
+								<label class="column-feature1__tab" for="radio-1">tab 1</label>						
+						
+								<input id="radio-2" type="radio" name="radio" value="2">
+								<label class="column-feature1__tab" for="radio-2">tab 2</label>						
+							
+								<input  id="radio-3" type="radio" name="radio" value="3">
+								<label class="column-feature1__tab" for="radio-3">tab 3</label>
+							
+							
+							<div id="tabbody1" class="features__column column-feature2">
+								<h4 class="info-caption__name column-feature2_bottom">Tabs with soft transitioning effect.</h4>
+								<p class="info-caption__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod 
+									bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra 
+									justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque 
+									penatibus et magnis dis parturient montes.</p>
+
+								<p class="info-caption__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod 
+									bibendum laoreet.</p>							
+								
+								<div class="column-feature2__download">Download</div>
+							</div>
+							<div id="tabbody2" class="features__column column-feature2">
+								<h4 class="info-caption__name column-feature2_bottom">Caption 2</h4>
+								<p class="info-caption__text">Aenean euismod bibendum laoreet. Lorem ipsum dolor sit amet, 
+									consectetur adipiscing elit. Proin gravida dolor sit amet lacus accumsan et viverra 
+									justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque 
+									penatibus et magnis dis parturient montes.</p>
+
+								<p class="info-caption__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod 
+									bibendum laoreet.</p>							
+								
+								<div class="column-feature2__download">Download</div>
+							</div>
+							<div id="tabbody3" class="features__column column-feature2">
+								<h4 class="info-caption__name column-feature2_bottom">Caption 3</h4>
+								<p class="info-caption__text">Proin sodales pulvinar tempor. Cum sociis natoque 
+									penatibus et magnis dis parturient montes.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod 
+									bibendum laoreet. </p>
+
+								<p class="info-caption__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod 
+									bibendum laoreet.Proin gravida dolor sit amet lacus accumsan et viverra 
+									justo commodo. </p>							
+								
+								<div class="column-feature2__download">Download</div>
+							</div>
 						</div>
 						
-						<div class="features__column column-feature2 active">
-							<h4 class="info-caption__name column-feature2_bottom">Tabs with soft transitioning effect.</h4>
-							<p class="info-caption__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod 
-								bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra 
-								justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque 
-								penatibus et magnis dis parturient montes.</p>
-
-							<p class="info-caption__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod 
-								bibendum laoreet.</p>							
-							
-							<div class="column-feature2__download">Download</div>
-						</div>
-						<div class="features__column column-feature2">
-							<h4 class="info-caption__name column-feature2_bottom">Caption 2</h4>
-							<p class="info-caption__text">Aenean euismod bibendum laoreet. Lorem ipsum dolor sit amet, 
-								consectetur adipiscing elit. Proin gravida dolor sit amet lacus accumsan et viverra 
-								justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque 
-								penatibus et magnis dis parturient montes.</p>
-
-							<p class="info-caption__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod 
-								bibendum laoreet.</p>							
-							
-							<div class="column-feature2__download">Download</div>
-						</div>
-						<div class="features__column column-feature2">
-							<h4 class="info-caption__name column-feature2_bottom">Caption 3</h4>
-							<p class="info-caption__text">Proin sodales pulvinar tempor. Cum sociis natoque 
-								penatibus et magnis dis parturient montes.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod 
-								bibendum laoreet. </p>
-
-							<p class="info-caption__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod 
-								bibendum laoreet.Proin gravida dolor sit amet lacus accumsan et viverra 
-								justo commodo. </p>							
-							
-							<div class="column-feature2__download">Download</div>
-						</div>
+						
 						
 						<div class="features__column column-feature3">
 							<div class="column-feature3__body">
@@ -478,15 +487,7 @@
 			
 			var open = document.getElementById("open-modal");
 			var modal = document.getElementById("modal");
-			var close = document.getElementById("close-modal");
-			
-			var tab1 = document.getElementsByClassName("column-feature1__tab")[0];	
-			var tab2 = document.getElementsByClassName("column-feature1__tab")[1];	
-			var tab3 = document.getElementsByClassName("column-feature1__tab")[2];	
-			
-			var tabbody1 = document.getElementsByClassName("column-feature2")[0];	
-			var tabbody2 = document.getElementsByClassName("column-feature2")[1];	
-			var tabbody3 = document.getElementsByClassName("column-feature2")[2];
+			var close = document.getElementById("close-modal");				
 			
 			button.addEventListener("click", function(){
 				button.classList.toggle("active");
@@ -503,56 +504,8 @@
 			close.addEventListener("click", function(event){
 				event.preventDefault();
 				modal.style.display = 'none';
-			});
+			});				
 			
-			
-			tab1.addEventListener("click", function(){
-				if (!tab1.classList.contains("active")) 
-				{
-					tab1.classList.add("active");
-					tabbody1.classList.add("active");
-				}
-				if (tab2.classList.contains("active")) {
-					tab2.classList.remove("active");
-					tabbody2.classList.remove("active");
-				}
-				if (tab3.classList.contains("active")) {
-					tab3.classList.remove("active");
-					tabbody3.classList.remove("active");
-				}
-			}, false);
-			
-			tab2.addEventListener("click", function(){
-				if (!tab2.classList.contains("active")) 
-				{
-					tab2.classList.add("active");
-					tabbody2.classList.add("active");
-				}
-				if (tab1.classList.contains("active")) {
-					tab1.classList.remove("active");
-					tabbody1.classList.remove("active");
-				}
-				if (tab3.classList.contains("active")) {
-					tab3.classList.remove("active");
-					tabbody3.classList.remove("active");
-				}
-			}, false);
-			
-			tab3.addEventListener("click", function(){
-				if (!tab3.classList.contains("active")) 
-				{
-					tab3.classList.add("active");
-					tabbody3.classList.add("active");
-				}
-				if (tab2.classList.contains("active")) {
-					tab2.classList.remove("active");
-					tabbody2.classList.remove("active");
-				}
-				if (tab1.classList.contains("active")) {
-					tab1.classList.remove("active");
-					tabbody1.classList.remove("active");
-				}
-			}, false);
 		</script>
 		
 	</body>

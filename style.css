@@ -387,49 +387,75 @@ ul {
 
 /*=============Features==========*/
 .features {
-	background-color: var(--grayphone);	
+	background-color: var(--grayphone);		
 }
 .features__row {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	margin: 0 -50px;
-	padding: 143px 0 114px 0;
+	padding: 143px 0;
 }
 .features__column {
 	padding: 0 50px;
 }
+
+
 .column-feature2 {
 	display: none;
+	position: relative;
+	top: -330px;
+	left: 130px;
+	margin-bottom: -300px;
 }
-.column-feature2.active  {
-	display: block;
+
+input[type="radio"] {
+	display: none;
 }
-.column-feature1__tab:first-child {
-	border-radius: 5px 5px 0 0;
-}
-.column-feature1__tab:last-child {
-	border-radius: 0 0 5px 5px;
+
+#radio-1:checked ~ #tabbody1,
+#radio-2:checked ~ #tabbody2,
+#radio-3:checked ~ #tabbody3 {
+  display: block;
 }
 
 .column-feature1__tab {
 	width: 110px;
 	height: 110px;
 	background-color: #333;
-	margin: 0 0 1px 0;
-	cursor: pointer;
+	margin: 0 0 1px 0;	
 	text-transform: uppercase;
 	text-align: center;
 	color: #fff;
 	font-weight: 700;
 	line-height: 7rem;
+	display: block;
+	cursor: pointer;		
+	user-select: none;
 }
+
+/*===================*/
+
+.column-feature1__tab[for='radio-1']{
+	border-radius: 5px 5px 0 0;
+}
+.column-feature1__tab[for='radio-3']  {
+	border-radius: 0 0 5px 5px;	
+}
+ 
+/* Checked */
+input[type=radio]:checked + .column-feature1__tab {
+	background-color: var(--orange-btn);	
+}
+ 
+/* Hover */
 .column-feature1__tab:hover {
 	background-color: #111;
-}
-.column-feature1__tab.active {
-	background-color: var(--orange-btn);
-}
+} 
+
+
+/*===================*/
+
 .column-feature2__download {
 	padding: 15px 20px;
 	background-color: var(--orange-btn);
@@ -440,11 +466,13 @@ ul {
 	cursor: pointer;
 	border-radius: 3px;
 }
-.column-feature1__tab.active:hover ,.column-feature2__download:hover {
-	background-color: #fb7b31;
+.column-feature2__download:hover {
+	background-color: #fb9948;
 }
 
+
 .column-feature3__body {
+	padding-left: 20px;
 	width: 320px;
 }
 .column-feature3__body img {
@@ -499,9 +527,6 @@ ul {
 	padding: 3rem 0 2.5rem 0;
 }
 
-.features-panel2__body ~ .features-panel2__body{
-	padding: 0;
-}
 
 .icons-features {
 	color: var(--orange-btn);
