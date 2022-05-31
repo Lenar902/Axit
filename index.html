@@ -14,6 +14,18 @@
 	</head>
 	
 	<body>
+		<div class="preloader" id="preloader">
+			<div class="cssload-container">
+				<ul class="cssload-flex-container">
+					<li>
+						<span class="cssload-loading cssload-one"></span>
+						<span class="cssload-loading cssload-two"></span>
+						<span class="cssload-loading-center"></span>
+					</li>
+				</div>
+			</div>	
+		</div>
+	
 		<div class="wrapper">
 			<div class="inner-container inner-container_header">
 				<div class="container">
@@ -480,31 +492,40 @@
 		
 		
 		<script>	
-			var menu = document.getElementsByClassName("header__menu")[0];		
-			var button = document.getElementsByClassName("open_menu")[0];
-			var nav = document.getElementsByClassName("header__nav")[0];
-			var lock = document.getElementsByTagName("body")[0];
-			
-			var open = document.getElementById("open-modal");
-			var modal = document.getElementById("modal");
-			var close = document.getElementById("close-modal");				
-			
-			button.addEventListener("click", function(){
-				button.classList.toggle("active");
-				menu.classList.toggle("active");
-				nav.classList.toggle("active");
-				lock.classList.toggle("lock")
-			}, false);
-			
-			open.addEventListener("click", function(event){
-				event.preventDefault();
-				modal.style.display = 'block';
-			});
-			
-			close.addEventListener("click", function(event){
-				event.preventDefault();
-				modal.style.display = 'none';
-			});				
+			window.onload = function() {
+				var menu = document.getElementsByClassName("header__menu")[0];		
+				var button = document.getElementsByClassName("open_menu")[0];
+				var nav = document.getElementsByClassName("header__nav")[0];
+				var lock = document.getElementsByTagName("body")[0];
+				
+				var open = document.getElementById("open-modal");
+				var modal = document.getElementById("modal");
+				var close = document.getElementById("close-modal");	
+
+				var preloader = document.getElementById("preloader");
+				let timerPr = setTimeout(function() {       
+					preloader.style.display = 'none';
+					clearTimeout(timerPr);       
+				  
+				}, 1000);
+				
+				button.addEventListener("click", function(){
+					button.classList.toggle("active");
+					menu.classList.toggle("active");
+					nav.classList.toggle("active");
+					lock.classList.toggle("lock")
+				}, false);
+				
+				open.addEventListener("click", function(event){
+					event.preventDefault();
+					modal.style.display = 'block';
+				});
+				
+				close.addEventListener("click", function(event){
+					event.preventDefault();
+					modal.style.display = 'none';
+				});	
+			}			
 			
 		</script>
 		
